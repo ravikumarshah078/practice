@@ -12,26 +12,18 @@ function diagonalDifference($arr) {
     $primary = 0;
     $secondary = 0;
     $length = count($arr);
-    $pr = 0;
-    $sec = 0;
-    for($i = 0; $i<$length; $i++){
-        $sub_len = count($arr[$i]);
-        for($j = 0; $j<$sub_len; $j++){
-            $primary += $arr[$i][$pr];
-            break;
-        }
-        for($k = $sub_len; $k >= 0; $k--)
-        {
 
-        }
+    for($i = 0; $i<$length; $i++){
+            $primary  += $arr[$i][$i];
+            $secondary += $arr[$i][count($arr)-(1+$i)];
     }
 
-    // return $result;
+    return abs($primary - $secondary);
 }
 $arr = [
     [1,2,3],
     [4,5,6],
-    [7,8,9]
+    [9,8,9]
 ];
 
 print_r(diagonalDifference($arr));
