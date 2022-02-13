@@ -8,7 +8,11 @@
 
 function miniMaxSum($arr) {
     // Write your code here
+    sort($arr);
+    $min = array_sum($arr) - end($arr);
+    $max = array_sum($arr) - reset($arr);
 
+    echo $min." ".$max;
 }
 
 miniMaxSum([1,2,3,4,5]);
